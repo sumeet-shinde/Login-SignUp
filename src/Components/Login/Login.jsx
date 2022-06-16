@@ -16,7 +16,7 @@ export const Login = () => {
       .get(`http://localhost:8080/users?email=${email}&password=${pass}`)
       .then(({ data }) => {
         if (data.length === 0) {
-          return alert("Please check your email and password.");
+          return alert("Invalid Login. Please check your email and password.");
         }
         dispatch(getUserData(data[0]));
         navigate("/home");
